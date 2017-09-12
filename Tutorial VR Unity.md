@@ -3,7 +3,7 @@
 
 [dosCamaras]:https://github.com/odrajaf/TutorialesPDM/blob/master/images/imagen1.png
 [confCamara1]:https://github.com/odrajaf/TutorialesPDM/blob/master/images/imagen2.png
-[confCamara2]:https://github.com/odrajaf/TutorialesPDM/blob/master/images/imagen2.png
+[confCamara2]:https://github.com/odrajaf/TutorialesPDM/blob/master/images/imagen3.png
 
 1º Lo más caracteristico del VR, es el uso de una vision estereoscópica para esto lo que haremos en primer lugar será duplicar nuestra camara principal del proyecto.
 
