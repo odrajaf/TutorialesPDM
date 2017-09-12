@@ -73,5 +73,59 @@
 		}
 	}
 
+6º Es muy importante si queremos realizar alguna animación como podría ser mover cualquier elemento dibujado, debemos usar el método liezo.invalidate(); para indicarle a la aplicación que se redibuje el canvas con los cambios en los parametros. En el siguiente ejemplo mostramos un ejemplo sencillo de como mover el cuadrado negro por la pantalla usando un sencillo contador y la función invalidate.
+
+
+	package com.ugr.fajardo.tutorial1;
+
+	import android.content.Context;
+	import android.graphics.Bitmap;
+	import android.graphics.BitmapFactory;
+	import android.graphics.Color;
+	import android.graphics.Paint;
+	import android.support.v7.app.AppCompatActivity;
+	import android.os.Bundle;
+	import android.graphics.Canvas;
+	import android.view.View;
+
+	public class MainActivity extends AppCompatActivity {
+
+	    CanvasView liezo;
+	    Bitmap cocacola;
+	    float contador = 0.0f;
+
+	    @Override
+	    protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+
+		liezo = new CanvasView(this);
+		setContentView(liezo);
+
+		cocacola = BitmapFactory.decodeResource(getResources(),  R.mipmap.cocacola);
+	    }
+
+
+	    public class CanvasView extends View {
+		public CanvasView(Context context) {
+		    super(context);
+		}
+
+		@Override
+		protected void onDraw(Canvas canvas) {
+		    super.onDraw(canvas);
+		    Paint paint = new Paint();
+
+		    paint.setColor(Color.BLACK);
+		    canvas.drawRect(contador+0 , contador+0, contador+70 , contador+70 , paint);
+		    contador=+ contador + 0.5f;
+
+		    canvas.drawBitmap(cocacola, 70, 70, null);
+		    liezo.invalidate();
+		}
+	    }
+	}
+
+
+
 ![alt text][resultado]
 	
