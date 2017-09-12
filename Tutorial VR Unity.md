@@ -5,6 +5,7 @@
 [confCamara1]:https://github.com/odrajaf/TutorialesPDM/blob/master/images/imagen2.png
 [confCamara2]:https://github.com/odrajaf/TutorialesPDM/blob/master/images/imagen3.png
 [vista]:https://github.com/odrajaf/TutorialesPDM/blob/master/images/imagen4.png
+[addcomponent]:https://github.com/odrajaf/TutorialesPDM/blob/master/images/imagen5.png
 
 1º Lo más caracteristico del VR, es el uso de una vision estereoscópica para esto lo que haremos en primer lugar será duplicar nuestra camara principal del proyecto.
 
@@ -49,3 +50,19 @@ Ya podremos apreciar que tenemos un efecto estereoscópico en nuestro juego inde
 			}
 		}
 El acelerometro va aproximadamente de valores de -0,7 a 0,6 (multiplicado por 45 para que diera el angulo adecuado) cuando agachamos y levantamos la cabeza respectivamente, este script usa la variable valorAnterior para suavizar el movimiento (evitando cambios bruscos) y el valoz del eje z del acelerometro rotará más o menos la camara. El giro a izquiera o derecha es dificil de captar por la precisión del acelerometro y se mantiene a 0 el giro en horizontal.
+
+Otra cosa interesante que podemos añadir al script es que muestre en pantalla los ejes captados por el acelerometro para afinar en el ajuste de la rotación, añadiendo el siguiente metodo
+
+	void OnGUI() { 
+			
+		GUI.Label (new Rect (10, 10, 150, 100), "Valor X: " + Input.acceleration.x);
+		GUI.Label (new Rect (10, 30, 150, 100), "Valor Y: " + Input.acceleration.y);
+		GUI.Label (new Rect (10, 50, 150, 100), "Valor Z: " + Input.acceleration.z);
+
+	}
+
+6º Una vez realizado el script lo podemos añadir al objeto vacio que contien las dos camaras llamado SoporteCamara, que podemos añadir pulsando a add component y seleccionando el script como aparece en la imagen siguiente.
+
+![alt text][addcomponent]
+
+Ya estaría todo listo para poder usar una camara de VR en un dispositivo android usando el acelerometro.
