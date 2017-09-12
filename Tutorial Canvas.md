@@ -1,7 +1,6 @@
 
-#Tutorial, canvas en android y paso de imagenes
+# Tutorial, canvas en android y paso de imagenes
 
-[resultado]:https://github.com/odrajaf/swap1415/blob/master/Practica2/contrab%20con%20rsync.png
 
 1º Primero en código java tendremos crear un clase que herede de la clase View y sobreescribir el método onDraw, esta clase será donde pondremos nuestro código con las imagenes o forma que queremos que se dibujen en el lienzo. De forma que podría quedar así:
 
@@ -126,6 +125,4 @@
 	}
 
 
-
-![alt text][resultado]
 	
